@@ -1,0 +1,62 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify API Demo 1</title>
+    <meta name="description" content="A sample web app that gets Spotify data.">
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/project-avatar/b96c147f-8065-40a6-9908-4fcafce2a361.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://sp-bootstrap.global.ssl.fastly.net/8.2.4/sp-bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+  </head>
+  
+  <body>
+    
+    <header>
+      <h1>Spotify Audio Analysis</h1>
+      <p>This app uses the following:</p>
+      <ul>
+        <li><a href="https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow" target="_blank">Client Credentials Flow</a> with the Accounts API &mdash; to get an <code>access_token</code> to call the Web API</li>
+        <li><a href="https://developer.spotify.com/documentation/web-api/reference/search/" target="_blank">Search API</a> &mdash; to search for tracks in Spotify's catalogue.</li>
+        <li><a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-analysis/" target="_blank">Get Audio Analysis</a> &mdash; to obtain the audio analysis of tracks.</li>
+      </ul>
+    </header>
+
+    <main> 
+      <!-- Form to search for tracks -->
+      <form id="search-form">
+        <input type="text" placeholder="Song Name"/>
+        <button type="submit" class="btn btn-spotify-green btn-md">Search</button>
+      </form>
+      
+      <!-- Title of current track -->
+      <h3 id="song-link"></h3>
+      
+      <!-- Empty canvases to render charts -->
+      <canvas id="canvas"></canvas>
+      <canvas id="canvas2"></canvas>
+      <canvas id="canvas3"></canvas>
+    </main>
+
+    <footer>
+      <a href="https://glitch.com/edit/#!/capitolroyale1" class="btn btn-spotify-green btn-md">Remix this in Glitch</a>
+      <p>
+        Spotify API demo by <a href="https://twitter.com/imariari">Arielle Vaniderstine</a>
+      </p>
+    </footer>
+    
+    <!-- include the Glitch button to show what the webpage is about and
+     to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="/client.js"></script>
+
+  </body>
+</html>
